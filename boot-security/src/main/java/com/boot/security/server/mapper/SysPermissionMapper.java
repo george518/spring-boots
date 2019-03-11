@@ -14,4 +14,12 @@ import java.util.List;
 public interface SysPermissionMapper {
     @Select("SELECT * FROM sys_permission WHERE role_id=#{roleId}")
     List<SysPermission> listByRoleId(Integer roleId);
+
+//    // This example creates a prepared statement, something like select * from teacher where name = ?;
+//    @Select("Select * from teacher where name = #{name}")
+//    Teacher selectTeachForGivenName(@Param("name") String name);
+//
+//    // This example creates n inlined statement, something like select * from teacher where name = 'someName';
+//    @Select("Select * from teacher where name = '${name}'")
+//    Teacher selectTeachForGivenName(@Param("name") String name);
 }

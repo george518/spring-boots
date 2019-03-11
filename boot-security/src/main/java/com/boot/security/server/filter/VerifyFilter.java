@@ -26,7 +26,7 @@ public class VerifyFilter extends OncePerRequestFilter {
             String verifyCode = request.getParameter("verifyCode");
             if(!validateVerify(verifyCode)) {
                 //手动设置异常
-                request.getSession().setAttribute("SPRING_SECURITY_LAST_EXCEPTION",new DisabledException("验证码输入错误"));
+                request.getSession().setAttribute("SPRING_SECURITY_LAST_EXCEPTION",new DisabledException("验证码输入错误1"));
                 // 转发到错误Url
                 request.getRequestDispatcher("/login/error").forward(request,response);
             } else {
